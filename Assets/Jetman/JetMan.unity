@@ -12979,6 +12979,7 @@ MonoBehaviour:
   startGameClip: {fileID: 0}
   endGameClip: {fileID: 8300000, guid: 43917a54f4d57394d92382b9813d3216, type: 3}
   dieClip: {fileID: 8300000, guid: b58aa1122be87a748abea4d6ecee8877, type: 3}
+  menuMusic: {fileID: 8300000, guid: 1acc54d9205566c458b2aee859929c73, type: 3}
   player: {fileID: 837525102}
   rocket: {fileID: 87389859}
 --- !u!4 &1897053514

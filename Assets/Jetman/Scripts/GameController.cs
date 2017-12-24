@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour {
     public AudioClip startGameClip;
     public AudioClip endGameClip;
     public AudioClip dieClip;
+    public AudioClip menuMusic;
     public Player player;
     public Rocket rocket;
 
@@ -155,10 +156,11 @@ public class GameController : MonoBehaviour {
         PlayClip(dieClip);
     }
 
-    void PlayClip(AudioClip clip) {
+    void PlayClip(AudioClip clip, bool loop=false) {
         audioSource.Stop();
         if (clip != null) {
             audioSource.clip = clip;
+            audioSource.loop = loop;
             audioSource.Play();
         }
     }
@@ -178,10 +180,12 @@ public class GameController : MonoBehaviour {
     void ShowStartButton() {
         startButton.enabled = true;
         startButton.transform.DOMoveY(0, 0.5f).SetEase(Ease.InOutBounce);
+        PlayClip(menuMusic, true);
     }
 
     void HideStartButton() {
         startButton.transform.DOMoveY(500, 0.2f).SetEase(Ease.InOutQuint);
         startButton.enabled = false;
+        PlayClip(null);
     }
 }
